@@ -1,14 +1,12 @@
 # Ansible Vault CLI Github Action
 
-This action is based on `ubuntu:bionic` image.  
-You can execute all `Ansible Vault` related actions i.e.  
-You can also execute standard `Linux` commands as base `Docker` image is `ubuntu`.
+Execute `Ansible Vault` actions.
 
 ## Inputs
 
-### `command`
+### `args`
 
-**Required** Command to execute. Default `"ansible-vault"`.
+**Required** Ansible Vault command to execute, appended to `ansible-vault` as args. Default `""`.
 
 ### `vault_key`
 
@@ -20,5 +18,5 @@ You can also execute standard `Linux` commands as base `Docker` image is `ubuntu
 uses: anthonykgross/ansible-vault-cli-github-action@v1
 with:
   vault_key: ${{ secrets.vault_key }}
-  command: "ansible-vault decrypt foo.yml"
+  args: "decrypt foo.yml"
 ```
